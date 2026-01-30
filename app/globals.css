@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Variáveis (utilities) customizadas do TailwindCSS */
 @theme {
   --color-primary: rgb(60 50 171);
   --color-positive: rgb(27 167 14);
@@ -41,9 +42,11 @@
     font-family: var(--font-onest);
     background-color: var(--color-background);
     line-height: 1.5;
+    height: 100dvh;
   }
 }
 
+/* Componentes criados a partir de variáveis do TailwindCSS */
 @layer components {
   .typo-display {
     @apply text-display font-bold;
@@ -92,7 +95,8 @@
   .link-button {
     @apply min-w-40 inline-flex justify-center items-center;
     @apply p-3;
-    @apply bg-primary;
+    @apply bg-primary text-background;
+    @apply rounded-xl;
     @apply transition-all duration-300 ease-in-out;
     @apply hover:brightness-110 active:bg-primary/80;
   }
