@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: rgb(60 50 171);
+  --color-positive: rgb(27 167 14);
+  --color-negative: rgb(167 14 14);
+  --color-text: rgb(0 0 0);
+  --color-background: rgb(255 255 255);
+
+  --font-onest: "Onest", sans-serif;
+
+  --text-display: 4rem;
+  --text-lg-title: 2.5rem;
+  --text-post-ttl: 2rem;
+  --text-lg-sbttl: 1.75rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: none;
+    outline: none;
+    border: none;
+    list-style: none;
+  }
 
-@media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --border-primary-2: 0.125rem solid rgb(60 50 171);
+    --border-primary-4: 0.25rem solid rgb(60 50 171);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-onest);
+    background-color: var(--color-background);
+    line-height: 1.5;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .typo-display {
+    @apply text-display font-bold;
+  }
+
+  .typo-lg-title {
+    @apply text-lg-title font-bold;
+  }
+
+  .typo-post-ttl {
+    @apply text-post-ttl font-semibold;
+  }
+
+  .typo-lg-sbttl {
+    @apply text-lg-sbttl font-medium;
+  }
+
+  .typo-label {
+    @apply text-2xl font-bold;
+  }
+
+  .typo-md-btn {
+    @apply text-base font-semibold;
+  }
+
+  .typo-md-normal {
+    @apply text-base font-normal;
+  }
+
+  .typo-sm-credits {
+    @apply text-sm font-normal;
+  }
+
+  .typo-xsm-credits {
+    @apply text-xs font-light;
+  }
+
+  .border-article {
+    border-left: var(--border-primary-4);
+  }
+
+  .border-card {
+    border: var(--border-primary-2);
+  }
+
+  .link-button {
+    @apply min-w-40 inline-flex justify-center items-center;
+    @apply p-3;
+    @apply bg-primary;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:brightness-110 active:bg-primary/80;
+  }
 }
