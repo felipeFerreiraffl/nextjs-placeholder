@@ -1,4 +1,4 @@
-export const SOCIAL_LINKS = {
+export const LINKS = {
   social: {
     github: "https://github.com/felipeFerreiraffl",
   },

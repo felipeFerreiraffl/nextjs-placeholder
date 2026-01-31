@@ -24,6 +24,7 @@
     text-decoration: none;
     background: none;
     outline: none;
+    overflow-x: hidden;
     border: none;
     list-style: none;
   }
@@ -42,7 +43,6 @@
     font-family: var(--font-onest);
     background-color: var(--color-background);
     line-height: 1.5;
-    height: 100dvh;
   }
 }
 
